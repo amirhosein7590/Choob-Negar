@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --z-index-45: 45;
+  --color-canvas-0: oklch(0.14 0.008 60);
+  --color-canvas-1: oklch(0.18 0.01 60);
+  --color-canvas-2: oklch(0.24 0.012 60);
+  --color-canvas-3: oklch(0.32 0.014 60);
+
+  --color-ink-0: oklch(0.96 0.006 80);
+  --color-ink-1: oklch(0.84 0.008 80);
+  --color-ink-2: oklch(0.62 0.01 80);
+  --color-ink-3: oklch(0.42 0.01 80);
+
+  --color-accent-amber: oklch(0.72 0.128 68);
+  --color-accent-walnut: oklch(0.42 0.068 52);
+  --color-accent-copper: oklch(0.58 0.092 40);
+
+  --font-sans: var(--font-vazirmatn), var(--font-inter), system-ui, sans-serif;
+  --font-display:
+    var(--font-vazirmatn), var(--font-inter), system-ui, sans-serif;
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-gentle: cubic-bezier(0.4, 0, 0.2, 1);
+
+  --spacing-gutter: clamp(1.25rem, 4vw, 3rem);
+
+  --radius-none: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: dark;
+  background: var(--color-canvas-0);
+  /*
+    The scrollbar is hidden because Lenis manages it.
+    Otherwise, the browser's progress bar would conflict with the narrative progress bar.
+  */
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-ink-1);
+  background: var(--color-canvas-0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+[dir="rtl"] {
+  font-feature-settings:
+    "ss02" on,
+    "ss03" on;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
