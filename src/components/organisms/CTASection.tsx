@@ -25,14 +25,14 @@ export function CTASection() {
       />
 
       <div className="relative mx-auto max-w-4xl px-6 py-28 text-center md:px-10 md:py-40">
-        <p className="mb-6 text-[10px] tracking-[0.5em] text-[var(--color-accent-amber)]">
+        <p className="mb-6 tracking-[0.5em] text-[var(--color-accent-amber)]">
           از روایت تا واقعیت
         </p>
 
         <h2 className="mb-8 text-3xl font-bold leading-[1.15] text-[var(--color-ink-0)] md:text-5xl lg:text-6xl">
-          کاسه‌ای که دیدی،
+         محصولی که دیدی
           <br />
-          می‌تواند کاسه‌ی تو باشد.
+          می‌تواند مال تو باشد.
         </h2>
 
         <p className="mx-auto mb-14 max-w-2xl text-base leading-loose text-[var(--color-ink-2)] md:text-lg">
